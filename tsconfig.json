@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@modules/*": ["./src/modules/*"],
+      "@shared/*": ["./src/shared/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@constants/*": ["./src/constants/*"]
+    },
+    "strictPropertyInitialization": false,
+    "resolveJsonModule": true,
+    "allowJs": false,
+    "declaration": true,
+    "sourceMap": true,
+    "outDir": "./.build",
+    "removeComments": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "skipLibCheck": true,
+    "strictBindCallApply": true,
+    "noFallthroughCasesInSwitch": false
+  },
+  "include": ["src/*.ts", "src/**/*.ts", "database/seeds/*.ts"],
+  "exclude": [
+    "./node_modules/*",
+    "./node_modules/@types"
+  ],
+  "buildOnSave": true,
+  "compileOnSave": true
+}
