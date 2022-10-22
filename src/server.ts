@@ -56,7 +56,7 @@ const appServer = new Promise(async (resolve, reject) => {
     // Serve public images
     app.use(
       '/api/audit/public',
-      express.static(join(__dirname, '../../', 'public')),
+      express.static(join(__dirname, '..', 'public')),
     );
 
     // Use Cookie for http only
@@ -71,7 +71,7 @@ const appServer = new Promise(async (resolve, reject) => {
     const config = new DocumentBuilder()
       .setTitle('Audit Service API Documentation')
       .setDescription(
-        'This is a AuAuditth Service for creating Metadata IoT system',
+        'This is a Audit Service for creating Metadata IoT system',
       )
       .setVersion('1.0.0')
       .addBearerAuth(

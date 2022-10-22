@@ -10,4 +10,9 @@ export default Object.freeze({
   ECRYPTED_SECRET: env.get('ECRYPTED_SECRET').required().asString(),
   JWT_EXPIRES_IN: env.get('JWT_EXPIRES_IN').default('3d').asString(),
   NATS_SERVICE: 'NATS_SERVICE',
+  AUDIT_EVENT: {
+    CREATED: 'audit.created',
+    UPDATED: 'audit.updated',
+    DELETED: 'audit.deleted',
+  },
 });

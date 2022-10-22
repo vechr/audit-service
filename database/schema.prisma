@@ -7,3 +7,26 @@ generator client {
   provider = "prisma-client-js"
   previewFeatures = ["interactiveTransactions"]
 }
+
+enum AuditAction {
+  CREATED
+  UPDATED
+  DELETED
+}
+
+model Audit {
+  id          String      @id @default(uuid()) @db.VarChar(36)
+  auditable   String      @db.VarChar(30)
+  auditableId String      @db.VarChar(36)
+  previous    Json?
+  incoming    Json?
+  action      AuditAction
+  username    String      @db.VarChar(50)
+  userId      String      @db.VarChar(36)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  @@index([auditable, auditableId])
+  @@index([userId])
+  @@map("audits")
+}
