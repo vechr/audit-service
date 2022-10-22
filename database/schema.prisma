@@ -21,7 +21,7 @@ model Audit {
   previous    Json?
   incoming    Json?
   action      AuditAction
-  username    String      @db.VarChar(50)
+  username    String?      @db.VarChar(50)
   userId      String      @db.VarChar(36)
   createdAt   DateTime    @default(now())
   updatedAt   DateTime    @updatedAt
