@@ -747,10 +747,10 @@
   resolved "https://registry.yarnpkg.com/@nestjs/mapped-types/-/mapped-types-1.1.0.tgz#54a9fa61079635dd6c3c75fd9593f20b2302a55b"
   integrity sha512-+2kSly4P1QI+9eGt+/uGyPdEG1hVz7nbpqPHWZVYgoqz8eOHljpXPag+UCVRw9zo2XCu4sgNUIGe8Uk0+OvUQg==
 
-"@nestjs/microservices@^9.1.5":
-  version "9.1.5"
-  resolved "https://registry.yarnpkg.com/@nestjs/microservices/-/microservices-9.1.5.tgz#3b78d56850f54637eb3afc671e51780612cc39f3"
-  integrity sha512-Qntb7kGqlhF1uyBGe6vHe6gGRw+hztlGdLgeEsc62Cs09lFkyQlMqNu+tSI0N3NNckOQF2mhcnuaRFE3z8IBOA==
+"@nestjs/microservices@^9.1.6":
+  version "9.1.6"
+  resolved "https://registry.yarnpkg.com/@nestjs/microservices/-/microservices-9.1.6.tgz#0eab2e42dd6d1e7562556d43ca688bdf2fa084a8"
+  integrity sha512-ppcA+ihIEJRvjpGc/ognlWwpp3Kra6wyH66BvqWJiNQa8T44V4Jrgn4mhQkd91TuVlGVS2vhG2KGeColLb70Sw==
   dependencies:
     iterare "1.2.1"
     tslib "2.4.0"
