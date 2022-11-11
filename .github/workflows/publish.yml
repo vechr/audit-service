@@ -43,6 +43,7 @@ jobs:
       name: Build and push
       uses: docker/build-push-action@v3
       with:
-        context: ./docker/Dockerfile.prod
+        context: .
+        file: docker/Dockerfile.prod
         push: true
         tags: zulfikar4568/audit-service:latest
