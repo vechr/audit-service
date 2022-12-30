@@ -58,7 +58,7 @@
     "swagger-ui-express": "^4.6.0"
   },
   "devDependencies": {
-    "@nestjs/cli": "^9.1.5",
+    "@nestjs/cli": "^9.1.8",
     "@nestjs/schematics": "^9.0.3",
     "@nestjs/testing": "^8.0.0",
     "@types/cookie-parser": "^1.4.3",
