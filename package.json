@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@nestjs/common": "^8.0.0",
-    "@nestjs/core": "^8.0.0",
+    "@nestjs/core": "^9.0.5",
     "@nestjs/jwt": "^9.0.0",
     "@nestjs/microservices": "^9.2.1",
     "@nestjs/passport": "^9.0.0",
@@ -44,7 +44,7 @@
     "dotenv": "^16.0.3",
     "env-var": "^7.3.0",
     "jsonwebtoken": "^8.5.1",
-    "nats": "^2.9.2",
+    "nats": "^2.11.0",
     "nestjs-pino": "^3.1.1",
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.0",
