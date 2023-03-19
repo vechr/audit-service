@@ -72,3 +72,10 @@ jobs:
         tags: |
           zulfikar4568/audit-service:latest
           zulfikar4568/audit-service:${{ steps.audit-service.outputs.release }}
+    - 
+      name: Discord notification
+      env:
+        DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+      uses: Ilshidur/action-discord@master
+      with:
+        args: 'Project {{ EVENT_PAYLOAD.repository.full_name }} generate container successfully. https://hub.docker.com/repository/docker/zulfikar4568/audit-service'
