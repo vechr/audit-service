@@ -5987,12 +5987,12 @@ mute-stream@0.0.8, mute-stream@~0.0.4:
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.8.tgz#1630c42b2251ff81e2a283de96a5497ea92e5e0d"
   integrity sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==
 
-nats@^2.9.2:
-  version "2.9.2"
-  resolved "https://registry.yarnpkg.com/nats/-/nats-2.9.2.tgz#16d1f721da6d123d3e04fb1236b9444ef3082df1"
-  integrity sha512-Ee1HVq/FsQrHSh0hvYJ1PhG+DtAhVG0kCXVvqEj8iL/qUge5IgGrwgXcXCBIlvp26PlWYyoMydMiIefYTD0aNw==
+nats@^2.11.0:
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/nats/-/nats-2.11.0.tgz#d16956e4ad3b416e7f0d44554d6486caf8e77c5a"
+  integrity sha512-Zkjtw4LRT0F9IZwSpLr6O0aLbK0w8rX7kU6PHSdk52YzB0c/pkiXstuGcdUpYdkAYkBS06FHfmRE4BVvCn7Pag==
   dependencies:
-    nkeys.js "1.0.3"
+    nkeys.js "1.0.4"
     web-streams-polyfill "^3.2.1"
 
 natural-compare-lite@^1.4.0:
@@ -6025,10 +6025,10 @@ nestjs-pino@^3.1.1:
   resolved "https://registry.yarnpkg.com/nestjs-pino/-/nestjs-pino-3.1.1.tgz#ae313d387ae879be511b8af006f905976467f3bc"
   integrity sha512-T7ajfqYTSHKrirzrElQJ3EWO/OZF5fFFkgaRvD+I7F5YY2hU3X295E/CnTkgpHZozL0s/3Ud4OtTZlT3NisTBw==
 
-nkeys.js@1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/nkeys.js/-/nkeys.js-1.0.3.tgz#487688a6f4f36f4a2796eee000cc6e54e122cb08"
-  integrity sha512-p5Bpb/acPaQmCrbe4gNmMBY/naZJV8Q7m2B9UkXT8BQRC6wjX8zqD2ya8eZu9mpSXQffodV46HCP9OckmxcwYA==
+nkeys.js@1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/nkeys.js/-/nkeys.js-1.0.4.tgz#0902bd44129569c4bd3857ce87d8b69f1c0e7253"
+  integrity sha512-xeNDE6Ha5I3b3PnlHyT9AbmBxq3Vb9KHzmaI/h4IXYg0PUVZSUXNHNhTfU20oBsubw2ZdV/1AdC6hnRuMiZfMQ==
   dependencies:
     tweetnacl "1.0.3"
 
@@ -7861,10 +7861,10 @@ swagger-ui-dist@4.15.5, swagger-ui-dist@>=4.11.0:
   resolved "https://registry.yarnpkg.com/swagger-ui-dist/-/swagger-ui-dist-4.15.5.tgz#cda226a79db2a9192579cc1f37ec839398a62638"
   integrity sha512-V3eIa28lwB6gg7/wfNvAbjwJYmDXy1Jo1POjyTzlB6wPcHiGlRxq39TSjYGVjQrUSAzpv+a7nzp7mDxgNy57xA==
 
-swagger-ui-express@^4.6.0:
-  version "4.6.0"
-  resolved "https://registry.yarnpkg.com/swagger-ui-express/-/swagger-ui-express-4.6.0.tgz#fc297d80c614c80f5d7def3dab50b56428cfe1c9"
-  integrity sha512-ZxpQFp1JR2RF8Ar++CyJzEDdvufa08ujNUJgMVTMWPi86CuQeVdBtvaeO/ysrz6dJAYXf9kbVNhWD7JWocwqsA==
+swagger-ui-express@^4.6.2:
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/swagger-ui-express/-/swagger-ui-express-4.6.2.tgz#61b2cb9fd7932cdccff99e0efdf700a5459e493c"
+  integrity sha512-MHIOaq9JrTTB3ygUJD+08PbjM5Tt/q7x80yz9VTFIatw8j5uIWKcr90S0h5NLMzFEDC6+eVprtoeA5MDZXCUKQ==
   dependencies:
     swagger-ui-dist ">=4.11.0"
 

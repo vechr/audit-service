@@ -44,7 +44,7 @@
     "dotenv": "^16.0.3",
     "env-var": "^7.3.0",
     "jsonwebtoken": "^8.5.1",
-    "nats": "^2.9.2",
+    "nats": "^2.11.0",
     "nestjs-pino": "^3.1.1",
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.0",
@@ -55,7 +55,7 @@
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.8.0",
-    "swagger-ui-express": "^4.6.0"
+    "swagger-ui-express": "^4.6.2"
   },
   "devDependencies": {
     "@nestjs/cli": "^9.1.5",
