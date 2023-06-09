@@ -15,4 +15,7 @@ export default Object.freeze({
     UPDATED: 'audit.updated',
     DELETED: 'audit.deleted',
   },
+  NATS_CA: env.get('NATS_CA').required().asString(),
+  NATS_KEY: env.get('NATS_KEY').required().asString(),
+  NATS_CERT: env.get('NATS_CERT').required().asString(),
 });

@@ -14,7 +14,19 @@ import { AuthStrategy } from './auth.strategy';
       signOptions: { expiresIn: appConstant.JWT_EXPIRES_IN },
     }),
     ClientsModule.register([
-      { name: appConstant.NATS_SERVICE, transport: Transport.NATS },
+      {
+        name: appConstant.NATS_SERVICE,
+        transport: Transport.NATS,
+        options: {
+          servers: [appConstant.NATS_URL],
+          maxReconnectAttempts: 10,
+          tls: {
+            caFile: appConstant.NATS_CA,
+            keyFile: appConstant.NATS_KEY,
+            certFile: appConstant.NATS_CERT,
+          },
+        },
+      },
     ]),
   ],
   providers: [AuthStrategy],
