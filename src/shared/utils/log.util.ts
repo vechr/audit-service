@@ -1,5 +1,6 @@
-import pino from 'pino';
-import prettyLogger from 'pino-pretty';
+import pino, { StreamEntry } from 'pino';
+import { LokiOptions } from 'pino-loki/index';
+import appConstant from '@/constants/app.constant';
 
 type LogPayload = string | Record<string, any>;
 
@@ -49,13 +50,35 @@ const logFnErr = (message: LogPayload, error: any, fn: pino.LogFn): string => {
   return finalMessage;
 };
 
-export const logger = pino(
-  prettyLogger({
+const pinoPretty = pino.transport({
+  target: 'pino-pretty',
+  options: {
     colorize: true,
     translateTime: 'SYS:dd/mm/yyyy HH:MM:ss',
     ignore: 'pid,hostname',
-  }),
-);
+  },
+});
+
+const streams: StreamEntry[] = [{ level: 'debug', stream: pinoPretty }];
+
+if (appConstant.LOKI_HOST && appConstant.LOKI_HOST != '') {
+  const pinoLoki = pino.transport<LokiOptions>({
+    target: 'pino-loki',
+    options: {
+      batching: false,
+      labels: { application: appConstant.APP_NAME },
+      host: appConstant.LOKI_HOST,
+      basicAuth: {
+        password: appConstant.LOKI_PASSWORD,
+        username: appConstant.LOKI_USERNAME,
+      },
+    },
+  });
+
+  streams.push({ level: 'debug', stream: pinoLoki });
+}
+
+export const logger = pino({ level: 'trace' }, pino.multistream(streams));
 
 export const log = {
   info: (message: LogPayload, ...args: LogPayload[]): void => {
