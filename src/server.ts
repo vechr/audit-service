@@ -11,6 +11,7 @@ import UnknownExceptionsFilter from './shared/filters/unknown.filter';
 import HttpExceptionFilter from './shared/filters/http.filter';
 import ContextInterceptor from './shared/interceptors/context.interceptor';
 import log from './shared/utils/log.util';
+import otelSDK from './tracing';
 
 const appServer = new Promise(async (resolve, reject) => {
   try {
@@ -109,5 +110,7 @@ const appServer = new Promise(async (resolve, reject) => {
 });
 
 (async function () {
+  if (appConstant.OTLP_HTTP_URL && appConstant.OTLP_HTTP_URL != '')
+    otelSDK.start();
   await Promise.all([appServer]);
 })();
