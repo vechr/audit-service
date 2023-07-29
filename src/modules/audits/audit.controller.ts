@@ -1,5 +1,6 @@
 import { Controller, Get, HttpCode, HttpStatus } from '@nestjs/common';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { OtelInstanceCounter, OtelMethodCounter } from 'nestjs-otel';
 import AuditService from './audit.service';
 import ListAuditResponse from './serializers/list-audit.response';
 import ListAuditValidator, {
@@ -18,6 +19,7 @@ import Context from '@/shared/decorators/context.decorator';
 @ApiTags('AuditAuth')
 @ApiBearerAuth('access-token')
 @Controller('audit/auditable')
+@OtelInstanceCounter()
 export default class AuditController {
   constructor(private readonly auditAuthService: AuditService) {}
 
@@ -29,6 +31,7 @@ export default class AuditController {
   @Validator(ListAuditValidator)
   @Serializer(ListAuditResponse)
   @ApiFilterQuery('filters', ListAuditQueryValidator)
+  @OtelMethodCounter()
   public async list(@Context() ctx: IContext): Promise<SuccessResponse> {
     const { result, meta } = await this.auditAuthService.list(ctx);
 
