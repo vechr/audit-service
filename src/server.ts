@@ -37,7 +37,7 @@ const appServer = new Promise(async (resolve, reject) => {
       );
 
     // Set prefix api globally
-    app.setGlobalPrefix('api');
+    app.setGlobalPrefix('api', { exclude: ['health'] });
 
     // Enable CORS for security
     app.enableCors({

@@ -1,11 +1,13 @@
 import { MiddlewareConsumer, Module, RequestMethod } from '@nestjs/common';
 import { LoggerModule } from 'nestjs-pino';
 import { OpenTelemetryModule } from 'nestjs-otel';
+import { TerminusModule } from '@nestjs/terminus';
 import AuthModule from './core/auth.module';
 import AuditModule from './modules/audits/audit.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { logger } from './shared/utils/log.util';
 import { InstrumentMiddleware } from './shared/middlewares/instrument.middleware';
+import HealthModule from './modules/health/health.module';
 
 const OpenTelemetryModuleConfig = OpenTelemetryModule.forRoot({
   metrics: {
@@ -42,6 +44,8 @@ const PinoLoggerModule = LoggerModule.forRoot({
     PrismaModule,
     AuthModule,
     AuditModule,
+    TerminusModule,
+    HealthModule,
   ],
 })
 export class AppModule {
