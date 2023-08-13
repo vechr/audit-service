@@ -1,12 +1,20 @@
-import { Controller, Get, Version, VERSION_NEUTRAL } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  HttpCode,
+  HttpStatus,
+  Version,
+  VERSION_NEUTRAL,
+} from '@nestjs/common';
 import {
   HealthCheckService,
   HealthCheck,
   PrismaHealthIndicator,
+  HealthCheckResult,
 } from '@nestjs/terminus';
 import PrismaService from '@/prisma/prisma.service';
 
-@Controller('health')
+@Controller()
 export default class HealthController {
   constructor(
     private health: HealthCheckService,
@@ -15,9 +23,22 @@ export default class HealthController {
   ) {}
 
   @Version(VERSION_NEUTRAL)
+  @Get('health')
+  @HealthCheck()
+  @HttpCode(HttpStatus.OK)
+  check() {
+    return this.healthCheck();
+  }
+
+  @Version(VERSION_NEUTRAL)
   @Get()
   @HealthCheck()
-  check() {
+  @HttpCode(HttpStatus.OK)
+  check2() {
+    return this.healthCheck();
+  }
+
+  private async healthCheck(): Promise<HealthCheckResult> {
     return this.health.check([
       () =>
         this.prismaHealth.pingCheck('prisma-database', this.prisma, {
